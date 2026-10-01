@@ -177,6 +177,7 @@
 }
 body.scroll{
   overflow-y: auto;
-  padding-bottom: 200vh;
+  overflow-x: hidden !important;
+  padding-bottom: 300vh;
   min-height: 100vh;
 }
