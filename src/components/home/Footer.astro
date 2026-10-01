@@ -1,0 +1,21 @@
+---
+import { social } from "@/data/social";
+
+
+---
+<footer class="footer-home">
+  <h1>
+    Premium steel fabrication for luxury residential,<br /> commercial, and architectural
+    projects.
+  </h1>
+  <ul class="FooterHome__social">
+    {
+      social.map((item)=>(
+        <li>
+          <a href={item.url}>{item.title}</a>
+        </li>
+      ))
+    }
+    <li class="scroll">scroll</li>
+  </ul>
+</footer>

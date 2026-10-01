@@ -6,15 +6,29 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.3.5"
+    "animate.css": "^4.1.1",
+    "astro": "^7.3.5",
+    "axios": "^1.20.0",
+    "gsap": "^3.15.0",
+    "hamburgers": "^1.2.1",
+    "hammer": "^0.0.5",
+    "split-type": "^0.3.4",
+    "swiper": "^14.2.0"
   },
   "allowScripts": {
     "esbuild": true
+  },
+  "devDependencies": {
+    "@types/hammerjs": "^2.0.46",
+    "sass": "^1.105.0",
+    "vite-plugin-mkcert": "^2.1.0",
+    "vite-plugin-qrcode": "^0.4.1",
+    "vite-plugin-remove-console": "^2.2.0"
   }
 }

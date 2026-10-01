@@ -1,0 +1,128 @@
+@use '../mixins/mixins' as *;
+@use '../functions/functions' as *;
+.Home2{
+  position: absolute;
+  z-index: 500;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #FFF;
+  color: #222220;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(var(--pd-top) * .5) 0 0;
+  transform: translateX(100%);
+  @include desktop-up{
+    display: grid;
+    grid-template-columns: 1fr get-vw(817px);
+    padding-top: 0;
+    padding-bottom: 0;
+    align-items: center;
+    justify-content: start;
+    max-height: 100vh;
+    padding-left: var(--pd-left);
+  }
+  .toggle-menu{
+    background: #000;
+    color: #fff;
+    align-self: flex-end;
+    width: 120px;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 1em;
+    line-height: 2em;
+    @include desktop-up{
+      position: absolute;
+      width: get-vw(128px);
+      line-height: get-vw(37px);
+      height: get-vw(37px);
+      font-size: get-vw(18px);
+      padding-left: get-vw(13px);
+      top: get-vw(70px);
+      right: get-vw(110px);
+      z-index: 500;
+    }
+  }
+  .text-container{
+    background: hsl(40, 18%, 93%);
+    padding: 2em 1.5em 2em;
+    @include desktop-up{
+      padding: 0;
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .Logo2{
+    padding-left: calc(var(--pd-left ) * 2);
+    padding-right: calc(var(--pd-right) * 2);
+    @include desktop-up{
+      padding: unset;
+      width: get-vw(389px);
+    }
+  }
+  h2{
+    font-weight: 600;
+    font-size: clamp(16px, 4.5vw, get-vw(18px));
+    margin-bottom: 1.5em;
+    text-align: center;
+    @include desktop-up{
+      text-align: left;
+      margin-bottom: get-vw(30px);
+    }
+  }
+  h3{
+    font-weight: 500;
+    font-size: clamp(16px, 4.5vw, get-vw(18px));
+    margin-bottom: .2em;
+  }
+  p{
+    font-size: clamp(16px, 4.5vw, get-vw(18px));
+    line-height: 1.1;
+  }
+  .paragraph{
+    margin-bottom: 1em;
+    // display: none;
+    @include desktop-up{
+      margin-bottom: get-vw(30px);
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  .text-container{
+    @include desktop-up{
+      padding-top: get-vw(237px);
+      padding-left: get-vw(330px);
+      padding-right: get-vw(106px);
+      position: relative;
+      p{
+        text-align: justify;
+      }
+    }
+  }
+  .text-container__footer{
+    text-align: center;
+    padding-top: 1.5em;
+    @include desktop-up{
+      position: absolute;
+      left: get-vw(103px);
+      bottom: get-vw(93px);
+      text-align: left;
+      width: 500px;
+      h2,h3,p{
+        font-size: get-vw(20px);
+        line-height: 1.2;
+
+      }
+    }
+  }
+}
+// .text-container{
+//   // display: none;
+//   * {
+//     display: none;
+//   }
+// }

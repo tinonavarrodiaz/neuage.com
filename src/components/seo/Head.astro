@@ -1,0 +1,42 @@
+---
+import { head } from '@/data/head';
+const { title, description, image, url, favicon, keywords } = head;
+interface Props {
+  subtitle?: string;
+}
+const { subtitle } = Astro.props as Props;
+
+const canonical = new URL(Astro.url.pathname, url).href;
+---
+
+<title>{`${title} ${subtitle ? `- ${subtitle}` : ''}`}</title>
+
+<meta charset="UTF-8" />
+<meta name="description" content={description} />
+
+<link rel="icon" type="image/svg+xml" href={favicon}  />
+<!-- <link rel="icon" href={favicon} /> -->
+<link rel="canonical" href={canonical} />
+<meta name="viewport" content="width=device-width" />
+
+<meta name="keywords" content={keywords} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+
+<meta property="og:image" content={image} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:site_name" content={title} />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_MX" />
+
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+
+<link rel="stylesheet" href="/fonts/css/clash-grotesk.css">

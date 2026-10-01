@@ -1,0 +1,9 @@
+.container{
+
+}
+.padding-in-line{
+  padding-inline: 1rem;
+  @media screen and  (width >= 876px) {
+    padding-inline: 2rem;
+  }
+}
