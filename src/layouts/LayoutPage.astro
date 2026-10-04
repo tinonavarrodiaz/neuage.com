@@ -1,0 +1,16 @@
+---
+import Menu from "@/components/Menu.astro";
+import Head from "@/components/seo/Head.astro";
+import '@/scss_pages/main.scss';
+---
+
+<!doctype html>
+<html lang="en">
+	<Head/>
+	<body>
+    <main>
+      <slot />
+    </main>
+    <Menu/>
+	</body>
+</html>

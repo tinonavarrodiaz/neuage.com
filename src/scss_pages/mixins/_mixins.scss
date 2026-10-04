@@ -1,0 +1,141 @@
+// ==========================================================================
+// Device Mixins
+// Breakpoints para manejo responsive por tipo de dispositivo
+// ==========================================================================
+
+// Puedes ajustar estos valores según las necesidades del proyecto
+$phone-max: 768px;
+$tablet-min: 769px;
+$tablet-max: 1023px;
+$laptop-min: 1024px;
+$laptop-max: 1439px;
+$pc-min: 1440px;
+$pc-max: 1920px;
+$tv-min: 1921px;
+
+// --------------------------------------------------------------------------
+// Phone (general, cualquier orientación)
+// --------------------------------------------------------------------------
+@mixin phone {
+  @media (max-width: $phone-max) {
+    @content;
+  }
+}
+
+// Phone en orientación portrait (vertical)
+@mixin phone-portrait {
+  @media (max-width: $phone-max) and (orientation: portrait) {
+    @content;
+  }
+}
+
+// Phone en orientación landscape (horizontal)
+@mixin phone-landscape {
+  @media (max-width: $phone-max) and (orientation: landscape) {
+    @content;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Tablet (general, cualquier orientación)
+// --------------------------------------------------------------------------
+@mixin tablet {
+  @media (min-width: $tablet-min) and (max-width: $tablet-max) {
+    @content;
+  }
+}
+
+// Tablet en orientación portrait (vertical)
+@mixin tablet-portrait {
+  @media (min-width: $tablet-min) and (max-width: $tablet-max) and (orientation: portrait) {
+    @content;
+  }
+}
+
+// Tablet en orientación landscape (horizontal)
+@mixin tablet-landscape {
+  @media (min-width: $tablet-min) and (max-width: $tablet-max) and (orientation: landscape) {
+    @content;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Laptop
+// --------------------------------------------------------------------------
+@mixin laptop {
+  @media (min-width: $laptop-min) and (max-width: $laptop-max) {
+    @content;
+  }
+}
+
+// --------------------------------------------------------------------------
+// PC / Desktop
+// --------------------------------------------------------------------------
+@mixin pc {
+  @media (min-width: $pc-min) and (max-width: $pc-max) {
+    @content;
+  }
+}
+
+// --------------------------------------------------------------------------
+// TV
+// --------------------------------------------------------------------------
+@mixin tv {
+  @media (min-width: $tv-min) {
+    @content;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Mixins adicionales útiles
+// --------------------------------------------------------------------------
+
+// Todo lo que sea "mobile" (phone + tablet)
+@mixin mobile {
+  @media (max-width: $tablet-max) {
+    @content;
+  }
+}
+
+// A partir de laptop en adelante (laptop + pc + tv)
+@mixin desktop-up {
+  @media (min-width: $laptop-min) {
+    @content;
+  }
+}
+
+// ==========================================================================
+// Ejemplo de uso
+// ==========================================================================
+//
+// .container {
+//   padding: 8px;
+//
+//   @include phone-portrait {
+//     padding: 4px;
+//   }
+//
+//   @include phone-landscape {
+//     padding: 6px;
+//   }
+//
+//   @include tablet-portrait {
+//     padding: 12px;
+//   }
+//
+//   @include tablet-landscape {
+//     padding: 16px;
+//   }
+//
+//   @include laptop {
+//     padding: 24px;
+//   }
+//
+//   @include pc {
+//     padding: 32px;
+//   }
+//
+//   @include tv {
+//     padding: 48px;
+//   }
+// }

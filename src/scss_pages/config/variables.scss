@@ -1,0 +1,44 @@
+@use 'sass:color';
+
+@use '../mixins/mixins' as *;
+@use '../functions/functions' as *;
+:root {
+  --main-color: hsl(0, 0%, 2%);
+  --main-color-alt: rgb(255, 255, 255);
+  --main-color-dark: rgb(36, 111, 179);
+  --color: hsl(0, 0%, 2%);
+  --color-alt: hsl(0, 0%, 95%);
+  --color-secondary: rgb(76, 83, 63);
+  --color-footer: rgb(191, 195, 194);
+  --bg-color: hsl(40, 18%, 93%);
+
+  --max-width: unset;
+
+  --font-title: 'ClashGrotesk';
+  --font-body: 'ClashGrotesk';
+  --font-size: 20px;
+  --header-height: 80px;
+  --z-normal: 1;
+  --z-header: 500;
+  --z-modal: 1000;
+  --pinline: 1rem;
+  --pd-left: 1rem;
+  --pd-right:1em;
+  --pd-top: 10vh;
+  --pd-botton: 10vh;
+  &.tablet{
+    --header-height: 100px;
+    --pd-left: #{get-vw(140px)};
+    --pd-right: #{get-vw(140px)};
+    --pd-top: #{get-vw(115px)};
+    --pd-botton: #{get-vw(80px)};
+  }
+  @include desktop-up {
+    --header-height: 100px;
+    --pd-left: #{get-vw(140px)};
+    --pd-right: #{get-vw(140px)};
+    --pd-top: #{get-vw(115px)};
+    --pd-botton: #{get-vw(80px)};
+    --pd-right: #{get-vw(106px)};
+  }
+}

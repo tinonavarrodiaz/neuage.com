@@ -1,0 +1,23 @@
+@use 'sass:math';
+
+@function texto3d($numero, $color) {
+  $text-shadow: 2px 2px $color;
+  @for $i from 1 through $numero {
+    $text-shadow: #{$text-shadow}, #{$i}px #{$i}px #{$color};
+  }
+  @return $text-shadow;
+}
+
+@function get-vw($target) {
+  $vw-context: (1920 * 0.01) * 1px;
+  @return math.div($target, $vw-context) * 1dvw;
+}
+
+.texto-3d {
+  text-shadow: texto3d(5, #340786);
+  font-size: 50px;
+}
+
+@function img($img) {
+  @return url('/img/#{$img}');
+}
