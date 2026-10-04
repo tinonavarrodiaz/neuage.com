@@ -7,3 +7,34 @@
     padding-inline: 2rem;
   }
 }
+.track{
+  height: 100dvh;
+  max-height: 100dvh;
+  width: 200%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+}
+section{
+  width: calc(100vw - var(--scrollbar));;
+  height: 100dvh;
+  max-height: 100dvh;
+
+}
+body, html{
+  background: #333;
+  min-height: 100dvh;
+  overflow-y: hidden;
+}
+main{
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow-y: hidden !important;
+  width: calc(100vw - var(--scrollbar));
+}
+html.scroll-is-active, html.scroll-is-active body{
+  // padding-bottom: 500vh;
+  overflow-y: auto !important;
+}

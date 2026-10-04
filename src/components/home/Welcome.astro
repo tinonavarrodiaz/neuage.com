@@ -1,0 +1,39 @@
+---
+import { menu } from "@/data/menu";
+import { social } from "@/data/social";
+import Logo from "../icons/Logo.astro";
+
+---
+
+
+<section class="Welcome">
+  <ul class="Welcome__menu">
+    {
+      menu.map(item =>(
+        <li>
+          <a href={item.url}>{item.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+  <div class="Welcome__logo">
+    <Logo/>
+  </div>
+  <footer class="Welcome__footer">
+    <p>Premium steel fabrication for luxury residential,<br/>
+        commercial, and architectural projects.</p>
+    <ul class="social">
+      {
+        social.map(item =>(
+          <li>
+            <a href={item.url}>{item.title}</a>
+          </li>
+        ))
+      }
+      <li class="scroll">Scroll</li>
+    </ul>
+  </footer>
+  <img class="image image-1" src="/img/home1-100@port.webp" alt="">
+  <img class="image image-2" src="/img/home2-100@port.webp" alt="">
+  <img class="image image-3" src="/img/home3-100@port.webp" alt="">
+</section>

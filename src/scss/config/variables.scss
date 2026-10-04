@@ -3,14 +3,14 @@
 @use '../mixins/mixins' as *;
 @use '../functions/functions' as *;
 :root {
-  --main-color: rgba(0,0,0);
+  --main-color: hsl(0, 0%, 2%);
   --main-color-alt: rgb(255, 255, 255);
   --main-color-dark: rgb(36, 111, 179);
-  --color: #000;
-  --color-alt: rgb(255, 255, 255);
+  --color: hsl(0, 0%, 2%);
+  --color-alt: hsl(0, 0%, 95%);
   --color-secondary: rgb(76, 83, 63);
   --color-footer: rgb(191, 195, 194);
-  --bg-color: rgb(255, 255, 255);;
+  --bg-color: hsl(40, 18%, 93%);
 
   --max-width: unset;
 

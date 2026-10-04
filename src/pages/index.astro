@@ -1,78 +1,30 @@
 ---
-import Home from '@/sections/Home.astro';
+// import Menu from '@/components/Menu.astro';
+import Welcome from '../components/home/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-import Images from '@/components/home/Images.astro';
+import Home from '@/components/home/Home.astro';
 ---
 
 <Layout>
-	<Home />
+  <div class="track">
+    <Welcome/>
+    <Home/>
+
+  </div>
+
+
 </Layout>
 
+
 <script>
-  // import { scrollFunction } from "@/libs/scrollFN"
-  import { isMobile } from '@/libs/isMobile';
-  import { gsap, ScrollTrigger } from '@/libs/gsap'
-  gsap.registerPlugin(ScrollTrigger);
-
-  window.addEventListener('DOMContentLoaded', e=>{
-
-    const footer = document.querySelector('footer.footer-home') as HTMLElement
-    const images = [...document.querySelectorAll('.image')] as HTMLImageElement[]
-    const imageWidth = images[0].clientWidth
-    const body = document.querySelector('body') as HTMLElement
-    document.documentElement.style.setProperty('--image-width',`${imageWidth}px`);
-    document.documentElement.style.setProperty('--screen-width',`${window.innerWidth}px`);
-    if(footer) footer.addEventListener('animationend', e=>{
-      body.classList.add('scroll')
+  window.addEventListener('DOMContentLoaded', function(e){
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+    const dd = document.documentElement as HTMLElement;
+    dd.style.setProperty('--screen-width', screenWidth + 'px');
+    dd.style.setProperty('--screen-height', screenHeight + 'px');
+    this.window.addEventListener('scroll', e=>{
+      console.log(scrollY)
     })
-    gsap.fromTo('.image-1',{
-      opacity: 0
-    },{
-      opacity: 1,
-      duration: .8,
-      delay: 1.5
-    })
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: 'body',   // el contenedor que tiene las 3 imágenes
-        start: 'top top',
-        end: '+=2000',            // px de scroll que dura TODA la animación
-        pin: true,                // mantiene la sección fija mientras dura
-        scrub: 1,
-        // markers: true,
-        invalidateOnRefresh: true
-      }
-    })
-    if(!isMobile()){
-      tl.to('.image-1', { x: 0, ease: 'power2.out', duration: 1 }, 0)
-      .to('.image-2', { x: () => window.innerWidth * 0.33, ease: 'power2.out', duration: 1 }, 0)
-      .to('.image-3', { x: () => window.innerWidth * 0.66, ease: 'power2.out', duration: 1 }, 0)
-
-      .to('.Home2', { x: 0, ease: 'power2.out', duration: .2, stagger: { amount: 0.1 }})
-        // Pausa: las imágenes se quedan quietas mientras sigues bajando
-        // .to({}, { duration: 0.5 })
-
-        // Fase 2: deslizarse a la izquierda hasta desaparecer
-        .to(['.image-1', '.image-2', '.image-3'], {
-          x: () => -window.innerWidth * 1.5,
-          // opacity: 0,                // opcional, para asegurar que desaparezcan
-          ease: 'power2.in',
-          duration: 1,
-          // stagger: 0.1               // opcional: salen una tras otra
-      })
-    }else{
-      tl.to('.image-1', { x: 0, ease: 'power2.out', duration: .5 }, 0)
-      .to('.image-2', { x: 0, ease: 'power2.out', duration: .5, delay: 0.02 }, 0)
-      .to('.image-3', { x: 0, ease: 'power2.out', duration: .5, delay:.05 }, 0).to('.Home2', { x: 0, ease: 'power2.out', duration: .2, stagger: { amount: 0.1 }})
-      // Fase 2: deslizarse a la izquierda hasta desaparecer
-        .to(['.image-1', '.image-2', '.image-3'], {
-          x: () => -window.innerWidth * 1.5,
-          // opacity: 0,                // opcional, para asegurar que desaparezcan
-          ease: 'power2.in',
-          duration: .5,
-          // stagger: 0.1               // opcional: salen una tras otra
-      })
-    }
   })
 </script>
-<!-- 2706638362 -->

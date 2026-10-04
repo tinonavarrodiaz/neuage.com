@@ -15,8 +15,8 @@
 @use 'components/modal';
 @use 'components/slider';
 @use 'components/footer';
+@use 'components/menu';
 
 // sections
-@use 'sections/home';
-@use 'sections/home2';
-@use 'sections/images';
+@use 'sections/welcome';
+@use 'sections/data';

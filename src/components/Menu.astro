@@ -1,0 +1,44 @@
+---
+import { menu } from "@/data/menu";
+import Hamburger from "./icons/Hamburger.astro";
+import Logo from "./icons/Logo.astro";
+import { addresses } from "@/data/adrees";
+---
+
+<aside class="Menu001">
+  <header class="Menu001__header">
+      <Logo class="Menu001__logo" />
+    <button class="toggle-menu toggle-menu1">
+      <Hamburger />
+    </button>
+  </header>
+  <ul class="Menu001__items">
+    {
+      menu.map((item)=>(
+        <li><a href={item.url}>{item.title}</a></li>
+      ))
+    }
+  </ul>
+  <footer class="Menu001__footer">
+    <div class="brand">
+      <p>NEUAGE</p>
+      <p>Steel Design Studio</p>
+    </div>
+    <div class="address_cotainer">
+      <p>{addresses.address}</p>
+      <p>{addresses.city}</p>
+      <p class="phone">{addresses.phone}</p>
+    </div>
+  </footer>
+</aside>
+<script>
+  window.addEventListener('DOMContentLoaded', e=>{
+    const toggle = document.querySelector('.toggle-menu1') as HTMLButtonElement
+    const menu = document.querySelector('.Menu001') as HTMLElement
+    toggle.addEventListener('click', e=>{
+      console.log(menu)
+      menu.classList.remove('is-active')
+      document.documentElement.classList.add('scroll-is-active')
+    })
+  })
+</script>

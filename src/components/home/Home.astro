@@ -1,8 +1,8 @@
 ---
-import Logo from "@/components/icons/Logo.astro";
+import Logo from "../icons/Logo.astro";
 ---
 
-<article class="Home2">
+<section class="Home2">
   <button class="toggle-menu">Menu</button>
   <div class="Logo2">
     <Logo />
@@ -42,4 +42,16 @@ import Logo from "@/components/icons/Logo.astro";
       </p>
     </footer>
   </div>
-</article>
+</section>
+
+<script>
+  window.addEventListener('DOMContentLoaded', e=>{
+    const toggle = document.querySelector('.toggle-menu') as HTMLButtonElement
+    const menu = document.querySelector('.Menu001') as HTMLElement
+    toggle.addEventListener('click', e=>{
+      console.log(menu)
+      document.documentElement.classList.remove('scroll-is-active')
+      menu.classList.add('is-active')
+    })
+  })
+</script>

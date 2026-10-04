@@ -13,6 +13,11 @@
   @return math.div($target, $vw-context) * 1dvw;
 }
 
+@function get-vh($target) {
+  $vw-context: (1080 * 0.01) * 1px;
+  @return math.div($target, $vw-context) * 1dvw;
+}
+
 .texto-3d {
   text-shadow: texto3d(5, #340786);
   font-size: 50px;
