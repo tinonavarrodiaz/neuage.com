@@ -1,16 +1,24 @@
 ---
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
 import Menu from "@/components/Menu.astro";
 import Head from "@/components/seo/Head.astro";
 import '@/scss_pages/main.scss';
+interface Props  {
+  page? :string
+}
+const {page}:Props = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
 	<Head/>
 	<body>
-    <main>
+    <Header/>
+    <main class={`${page ? "Page " + page : 'Page'}`}>
       <slot />
     </main>
+    <Footer/>
     <Menu/>
 	</body>
 </html>

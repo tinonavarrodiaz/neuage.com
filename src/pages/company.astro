@@ -1,8 +1,25 @@
 ---
 import LayoutPage from '@/layouts/LayoutPage.astro';
+const page:string = "Company"
 ---
 
-<LayoutPage>
+<LayoutPage page={page}>
+  <section >
 
+    <h1>{page}</h1>
+
+    <p>
+      At neuage, we believe steel should do more than protect a property, it should elevate it.
+    </p>
+    <p>
+      As a family-owned fabrication studio based in Los Angeles, we combine over 25 years of hands-on expertise with modern fabrication technology to create architectural metalwork that balances security, durability, and design.
+    </p>
+    <p>
+      From custom driveway gates and steel entry systems to outdoor architectural elements and precision fabrication, every project is crafted with meticulous attention to detail and engineered to stand the test of time.
+    </p>
+    <article class="gallery">
+      <img src="/img/company.webp" alt="Company">
+    </article>
+  </section>
 
 </LayoutPage>

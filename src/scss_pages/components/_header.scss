@@ -2,5 +2,45 @@
 @use '../functions/functions' as *;
 
 .Header{
-
+  height: 100px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10vw 10vw 0;
+  @include desktop-up{
+    height: get-vw(195px);
+    padding: get-vw(100px) get-vw(165px) 0;
+    font-size: get-vw(22px);
+    align-items: flex-end;
+  }
+  &__logo{
+    display: block;
+    width: 50vw;
+    max-width: 300px;
+    height: auto;
+    @include desktop-up{
+      max-width: get-vw(390px);
+    }
+  }
+  &__toggle{
+    align-self: flex-start;
+    transform: translateY(-1px);
+    display: flex;
+    justify-content: flex-start;
+    color: #FFF;
+    background: var(--main-color);
+    line-height: 1.8em;
+    padding: 0 1.5em 0 .5em;
+    font-size: clamp(14px, 4vw, 18px);
+    @include desktop-up{
+      width: get-vw(127px);
+      height: get-vw(37px);
+      line-height: 0;
+      padding-right: 0;
+      padding-left: get-vw(15px);
+      font-size: get-vw(18px);
+      align-items: center;
+      line-height: 1;
+    }
+  }
 }

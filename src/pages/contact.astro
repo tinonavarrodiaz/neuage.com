@@ -1,8 +1,46 @@
 ---
 import LayoutPage from '@/layouts/LayoutPage.astro';
+const page:string = "Contact"
 ---
 
-<LayoutPage>
+<LayoutPage page={page}>
+  <section >
 
+    <h1>{page}</h1>
+
+    <p>
+     At Neuage, every project is an opportunity to create a space that feels distinctly yours. From custom gates and architectural steelwork to outdoor living features, we bring design, engineering, and precision fabrication together to create lasting pieces that make an impact.
+    </p>
+    <form action="" class="contact-form" id="contact">
+      <div class="input-group">
+        <input type="text" name="name" placeholder=" " id="name">
+        <label for="name">Name</label>
+      </div>
+      <div class="input-group">
+        <input type="email" name="email" placeholder=" "  id="email">
+        <label for="email">Email</label>
+      </div>
+      <div class="input-group">
+        <input type="tel" name="phone" placeholder=" " id="phone">
+        <label for="phone">Phone</label>
+      </div>
+      <div class="input-group textarea">
+        <textarea name="msg" id=msg" placeholder=" "></textarea>
+        <label for="msg">Message</label>
+      </div>
+      <button type="submit">Send</button>
+    </form>
+
+
+  </section>
 
 </LayoutPage>
+
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('.contact-form')
+
+form?.addEventListener('submit', (e: SubmitEvent) => {
+  e.preventDefault()
+})
+</script>

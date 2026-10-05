@@ -11,10 +11,11 @@
 
 // components
 @use 'components/header';
-@use 'components/hamburger';
+@use '../scss/components/hamburger';
 @use 'components/modal';
 @use 'components/slider';
 @use 'components/footer';
 @use '../scss/components/menu';
 
 // sections
+@use 'sections/services';

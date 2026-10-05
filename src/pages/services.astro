@@ -1,8 +1,33 @@
 ---
 import LayoutPage from '@/layouts/LayoutPage.astro';
+const page:string = "Services"
 ---
 
-<LayoutPage>
+<LayoutPage page={page}>
+  <section >
 
+    <h1>{page}</h1>
+
+    <p>
+      <span>Entry & Security Solutions</span>
+      Custom driveway gates, pedestrian gates, perimeter fencing, and architectural steel doors designed for seamless integration with modern properties.
+    </p>
+    <p>
+      <span>Architectural Outdoor Living</span>
+      Steel planters, pergolas, patio covers, retaining walls, and bespoke outdoor furniture crafted for California environments.
+    </p>
+    <p>
+      <span>Precision Fabrication</span>
+      Advanced CNC water jet cutting, machining, rolling, bending, and certified welding for architectural and industrial applications.
+    </p>
+    <p>
+      <span>Design & Engineering</span>
+      From conceptual design and shop drawings to material selection and fabrication planning.
+    </p>
+    <article class="gallery">
+      <img src="/img/services1.webp" alt="services">
+      <img src="/img/services2.webp" alt="services">
+    </article>
+  </section>
 
 </LayoutPage>

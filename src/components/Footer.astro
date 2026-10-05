@@ -1,0 +1,35 @@
+---
+import { addresses } from "@/data/adrees";
+import Logo from "./icons/Logo.astro";
+import { social } from "@/data/social";
+---
+
+<footer class="Footer">
+  <div class="Footer__data">
+    <div class="Footer__brand">
+      <p>NEUAGE</p>
+      <p>Steel Design Studio</p>
+    </div>
+    <div class="Footer__adreess">
+      <p>{addresses.address}</p>
+      <p>{addresses.city}</p>
+    </div>
+    <ul class="Footer__social">
+      {
+        social.map(item =>(
+          <li>
+            <a href={item.url}>{item.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="Footer__phone">
+      {
+        addresses.phone
+      }
+    </p>
+  </div>
+  <div class="Footer__logo">
+    <Logo/>
+  </div>
+</footer>

@@ -1,7 +1,22 @@
 ---
+import Logo from "./icons/Logo.astro";
+
 
 ---
 
 <header class="Header">
-
+  <a class="Header__logo" href="/"><Logo/></a>
+  <button class="Header__toggle">
+    Menu
+  </button>
 </header>
+
+<script>
+  window.addEventListener('DOMContentLoaded', ()=>{
+    const toggle = document.querySelector('.Header__toggle') as HTMLButtonElement
+    const menu = document.querySelector('.Menu001') as HTMLElement
+    toggle.addEventListener('click', ()=>{
+      menu.classList.add('is-active')
+    })
+  })
+</script>

@@ -1,0 +1,26 @@
+@use '../mixins/mixins' as *;
+@use '../functions/functions' as *;
+
+.Services{
+  p{
+    @include desktop-up{
+      font-size: get-vw(47px);
+    }
+    span{
+      display: block;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+  }
+  .gallery{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5em;
+    @include desktop-up{
+      display: grid;
+      grid-template-columns: get-vw(620px) 1fr;
+      column-gap: get-vw(200px);
+      align-items: center;
+    }
+  }
+}
